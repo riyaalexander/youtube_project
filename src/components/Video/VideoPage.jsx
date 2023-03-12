@@ -23,7 +23,7 @@ function VideoPage() {
   // }, [id]);
 
   useEffect(() => {
-    axios.get(`https://www.googleapis.com/youtube/v3/videos?id=${id}&key=YOUR_API_KEY&part=snippet`)
+    axios.get(`https://www.googleapis.com/youtube/v3/videos?id=${id}&key=${process.env.REACT_APP_YOUTUBE_API_KEY}&part=snippet`)
       .then(response => {
         setVideo(response.data.items[0]);
       })
