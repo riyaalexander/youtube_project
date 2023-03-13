@@ -1,4 +1,4 @@
-// import "/Users/shaniquacoston/Pursuit/youtube-clone/src/styles/About.css"
+import "/Users/shaniquacoston/Pursuit/youtube_project/src/styles/About.css"
 
 
 export default function About() {

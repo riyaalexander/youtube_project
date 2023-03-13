@@ -1,5 +1,6 @@
+import "/Users/shaniquacoston/Pursuit/youtube_project/src/styles/NavBar.css"
 import { Link } from "react-router-dom";
-import ""
+
 const NavBar = () => {
   return (
     <nav className="navbar">

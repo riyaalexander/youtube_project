@@ -1,0 +1,34 @@
+.videos-index {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .videos-index li {
+    display: inline-block;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    width: 200px;
+  }
+  
+  .videos-index li img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+
+@media screen and (max-width: 1000px) {
+  .videos-index-wrapper {
+    width: 90%;
+  }
+  .videos-index {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .videos-index {
+    grid-template-columns: 1fr;
+  }
+}
