@@ -1,8 +1,4 @@
-// const Video = ({ video }) => {
-//   return <div className="yt_video">{/* video goes here */}</div>;
-// };
 
-// export default Video;
 
 import axios from 'axios';
 import { useParams } from 'react-router-dom';

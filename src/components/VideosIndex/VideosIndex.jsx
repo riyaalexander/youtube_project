@@ -1,13 +1,7 @@
-// const VideoList = ({ videos }) => {
-//   return <div className="video-list"></div>;
-// };
-
-// export default VideoList;
-
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import VideoPage from "./Video";
+import VideoPage from "/Users/shaniquacoston/Pursuit/youtube_project/src/components/Video/VideoPage";
 
 import  {fetchVideos}  from "/Users/shaniquacoston/Pursuit/youtube_project/src/utils/fetch.js";
 
