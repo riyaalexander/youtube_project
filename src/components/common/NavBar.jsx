@@ -1,4 +1,4 @@
-import "src/styles/NavBar.css"
+import "/Users/shaniquacoston/Pursuit/youtube_project/src/styles/NavBar.css"
 import { Link } from "react-router-dom";
 
 const NavBar = () => {
