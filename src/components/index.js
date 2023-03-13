@@ -1,7 +1,11 @@
-import NavBar from "./common/NavBar";
-import Home from "./Home/Home";
-import Search from "./Search/Search";
-import Video from "./Video/Video";
-import VideosIndex from "./VideosIndex/VideosIndex";
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./styles/index.css";
+import App from "./App";
 
-export { NavBar, Home, Search, Video, VideosIndex };
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
