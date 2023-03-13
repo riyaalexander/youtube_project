@@ -11,7 +11,7 @@ import VideoPage from "./Video";
 
 import { fetchVideos } from "./fetch";
 
-// import "/Users/shaniquacoston/Pursuit/youtube-clone/src/styles/VideosIndex.css"
+import ""
 
 const VideoList = ({ videos }) => {
 const {id} = useParams();
