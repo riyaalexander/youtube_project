@@ -9,9 +9,9 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import VideoPage from "./Video";
 
-import { fetchVideos } from "./fetch";
+import  {fetchVideos}  from "/Users/shaniquacoston/Pursuit/youtube_project/src/utils/fetch.js";
 
-// import "/Users/shaniquacoston/Pursuit/youtube-clone/src/styles/VideosIndex.css"
+import "/Users/shaniquacoston/Pursuit/youtube_project/src/styles/VideosIndex.css"
 
 const VideoList = ({ videos }) => {
 const {id} = useParams();
