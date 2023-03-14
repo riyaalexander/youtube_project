@@ -1,12 +1,11 @@
-
-
-import axios from 'axios';
-import { useParams } from 'react-router-dom';
-import React, { useState, useEffect } from 'react';
+import axios from "axios";
+import { useParams } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import YouTube from "react-youtube";
 
 function VideoPage() {
   const { id } = useParams();
-  const [video, setVideo] = useState(null);
+  // const [video, setVideo] = useState(null);
 
   // useEffect(() => {
   //   async function fetchVideo() {
@@ -18,32 +17,30 @@ function VideoPage() {
   //   fetchVideo();
   // }, [id]);
 
-  useEffect(() => {
-    axios.get(`https://www.googleapis.com/youtube/v3/videos?id=${id}&key=${process.env.REACT_APP_YOUTUBE_API_KEY}&part=snippet`)
-      .then(response => {
-        setVideo(response.data.items[0]);
-      })
-      .catch(error => {
-        console.error(error);
-      });
-  }, [id]);
+  // useEffect(() => {
+  //   axios
+  //     .get(`https://www.googleapis.com/youtube/v3/videos?id=${id}&key=${process.env.REACT_APP_YOUTUBE_API_KEY}&part=snippet`)
+  //     .then((response) => {
+  //       setVideo(response.data.items[0]);
+  //     })
+  //     .catch((error) => {
+  //       console.error(error);
+  //     });
+  // }, [id]);
 
-  if (!video) {
-    return <div>Loading...</div>;
-  }
+  // if (!video) {
+  //   return <div>Loading...</div>;
+  // }
+
+  const onReady = (event) => {
+    event.target.playVideo();
+  };
 
   return (
     <div>
-      <h1>{video.snippet.title}</h1>
-      <iframe
-        title={`YouTube video player for ${video.snippet.title}`}
-        width="560"
-        height="315"
-        src={`https://www.youtube.com/embed/${video.id}`}
-        frameborder="0"
-        allow="autoplay; encrypted-media"
-        allowfullscreen
-      ></iframe>
+      <YouTube videoId={id} onReady={onReady} />
+      {/* <h1>{video.snippet.title}</h1> */}
+      {/* <iframe title={`YouTube video player for ${video.snippet.title}`} width="560" height="315" src={`https://www.youtube.com/embed/${video.id}`} frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> */}
     </div>
   );
 }

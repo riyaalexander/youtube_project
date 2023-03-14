@@ -1,11 +1,12 @@
 import { useState } from "react";
-import YouTube from "react-youtube";
+import { useNavigate } from "react-router-dom";
 import { fetchVideos } from "../../utils/fetch";
-import "../../styles/Search.css"
+import "../../styles/Search.css";
 
 const Search = () => {
+  const navigate = useNavigate();
+
   const [search, setSearch] = useState("");
-  const [searchResults, setSearchResults] = useState([]);
 
   const handleTextChange = (event) => {
     setSearch(event.target.value);
@@ -13,9 +14,10 @@ const Search = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     fetchVideos(search)
       .then((data) => {
-        setSearchResults(data);
+        navigate("/videos", { state: { data } });
       })
       .catch((error) => {
         console.log(error);
@@ -26,20 +28,12 @@ const Search = () => {
 
   return (
     <div className="search-bar">
-      <form  onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit}>
         <input type="text" id="search" value={search} onChange={handleTextChange} placeholder="Search" />
         <input type="submit" val="Search" />
       </form>
-      <div className="search-results">
-        {searchResults.length
-          ? searchResults.map((result) => {
-              return <YouTube videoId={result.id.videoId} />;
-            })
-          : <p>No Search Results Yet!, Please submit a search above</p>}
-      </div>
     </div>
-   
   );
 };
-  
+
 export default Search;
