@@ -6,7 +6,6 @@ const Search = () => {
   const navigate = useNavigate();
 
   const [search, setSearch] = useState("");
-  // const [searchResults, setSearchResults] = useState([]);
 
   const handleTextChange = (event) => {
     setSearch(event.target.value);
@@ -18,7 +17,6 @@ const Search = () => {
     fetchVideos(search)
       .then((data) => {
         navigate("/videos", { state: { data } });
-        // setSearchResults(data);
       })
       .catch((error) => {
         console.log(error);
