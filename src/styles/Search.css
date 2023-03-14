@@ -1,4 +1,4 @@
-.search {
+.search-bar {
     width: 60%;
     height: 58px;
     margin: 60px auto auto auto;
@@ -6,7 +6,7 @@
     position: relative;
     
   } 
-  .search p {
+  .search-bar p {
     background-color:lightgray;
     text-align: center;
     box-shadow: 0 2px 43px rgba(0,0,0,.77);
@@ -60,5 +60,5 @@
     box-shadow: 0 1px 1px rgba(0,0,0,.15),
       inset 0 0 2px rgba(0,0,0,.05);
     transition: all .07s ease-in-out
-  } */
-  
+  }
+   */
