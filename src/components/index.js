@@ -1,11 +1,8 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import "./styles/index.css";
-import App from "./App";
+import NavBar from "./common/NavBar";
+import Home from "./Home/Home";
+import Search from "./Search/Search";
+import VideoPage from "./Video/VideoPage";
+import About from "./About/About";
+import VideosIndex from "./VideosIndex/VideosIndex";
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+export { NavBar, Home, Search, VideoPage, VideosIndex, About };
