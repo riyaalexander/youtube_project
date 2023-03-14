@@ -1,6 +1,7 @@
 import { useState } from "react";
 import YouTube from "react-youtube";
 import { fetchVideos } from "../../utils/fetch";
+import "../../styles/Search.css"
 
 const Search = () => {
   const [search, setSearch] = useState("");
@@ -24,8 +25,8 @@ const Search = () => {
   };
 
   return (
-    <div>
-      <form className="search" onSubmit={handleSubmit}>
+    <div className="search-bar">
+      <form  onSubmit={handleSubmit}>
         <input type="text" id="search" value={search} onChange={handleTextChange} placeholder="Search" />
         <input type="submit" val="Search" />
       </form>
@@ -34,10 +35,11 @@ const Search = () => {
           ? searchResults.map((result) => {
               return <YouTube videoId={result.id.videoId} />;
             })
-          : null}
+          : <p>No Search Results Yet!, Please submit a search above</p>}
       </div>
     </div>
+   
   );
 };
-
+  
 export default Search;
