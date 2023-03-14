@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { fetchVideos } from "../../utils/fetch";
+import "../../styles/Search.css";
 
 const Search = () => {
   const navigate = useNavigate();
@@ -26,8 +27,8 @@ const Search = () => {
   };
 
   return (
-    <div>
-      <form className="search" onSubmit={handleSubmit}>
+    <div className="search-bar">
+      <form onSubmit={handleSubmit}>
         <input type="text" id="search" value={search} onChange={handleTextChange} placeholder="Search" />
         <input type="submit" val="Search" />
       </form>
