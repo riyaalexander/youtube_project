@@ -1,6 +1,6 @@
-import axios from "axios";
+// import axios from "axios";
 import { useParams } from "react-router-dom";
-import React, { useState, useEffect } from "react";
+// import React, { useState, useEffect } from "react";
 import YouTube from "react-youtube";
 
 function VideoPage() {
